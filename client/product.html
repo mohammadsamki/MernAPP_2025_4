@@ -8,8 +8,37 @@
 <body>
     <!-- prod crud page -->
     <h1>hi in products</h1>
+    <!-- for for crete products that contain name,price , category , dis , imageUrl   -->
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html">Logout</a>
+        <form id="createProductForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="number" id="price" placeholder="Price" required>
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="text" id="imageUrl" placeholder="Image URL" required>
+            <button type="submit">Create Product</button>
+        </form>
     <!--  form create prod -->
 
     <!--  table to get , update and delete the products -->
+      <table border="1" id="productsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="productsBody">
+            <!-- Products will be populated here -->
+        </tbody>
+    </table>
+
+    <script src="./js/products.js"></script>
 </body>
 </html>
