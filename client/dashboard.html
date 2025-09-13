@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <h1>hi in dashboard</h1>
+    <div id="userRole"></div>
+    <a href="login.html">Logout</a>
+    <a href="product.html">Products</a>
+    <!-- form to add new user  -->
+    <h2>Add New User</h2>
+    <form id="addUserForm">
+
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="text" id="role" placeholder="Role (admin/user)" required>
+        <button type="submit">Add User</button>
+    </form>
+    <!-- table to get all users , delete and update for each user  -->
+    <table border="1" id="usersTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="usersBody">
+            <!-- Users will be populated here -->
+        </tbody>
+    </table>  
+    <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="updateUserData">
+          <!-- userIdInput -->
+           <input type="text" id="userIdInput" hidden>
+            <div class="mb-3">
+              <label for="userName" class="col-form-label">Name:</label>
+              <input type="text" class="form-control" id="userName">
+            </div>
+            <div class="mb-3">
+              <label for="userEmail" class="col-form-label">Email:</label>
+              <input type="email" class="form-control" id="userEmail">
+            </div>
+            <div class="mb-3">
+              <label for="userRoleInput" class="col-form-label">Role:</label>
+              <input type="text" class="form-control" id="userRoleInput">
+            </div>
+            <input type="hidden" id="userId">
+            <button type="submit" class="btn btn-primary">Update User</button>
+          </form>
+        </form>
+      </div>
+   
+    </div>
+  </div>
+</div>  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="./js/dashboard.js"></script>
+</body>
+</html>
