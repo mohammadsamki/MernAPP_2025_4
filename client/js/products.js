@@ -95,12 +95,22 @@ function renderProducts(products) {
     productsBody.innerHTML = '';
     products.forEach(product => {
         var tr = document.createElement('tr');
+        console.log(product)
+        // if category is populated then show category name else show category id
+        if(product.category && product.category.name){
+            product.category = product.category.name;
+            // fetch api with get cat by id 
+            // res = prod.category
+        }
+        else{
+            product.category = product.category;
+        }
         tr.innerHTML = `
             <td>${product._id}</td>
             <td>${product.name}</td>
-            <td>${product.description}</td>
             <td>${product.price}</td>
             <td>${product.category}</td>
+            <td>${product.description}</td>
             <td><img src="${product.imageUrl}" alt="${product.name}" width="50"/></td>
             <td>
                 <button class="btn btn-sm btn-primary edit-btn" data-id="${product._id}">Edit</button>
@@ -111,3 +121,31 @@ function renderProducts(products) {
     });
     // Attach event listeners to edit and delete buttons
 }
+// function to get all categories and populate the category select dropdown
+async function loadCategoriesForProduct() {
+    try {
+        var res = await fetch("http://localhost:5004/api/categories/all", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        if (res.status === 200) {
+            var data = await res.json();
+            var categorySelect = document.getElementById('category');
+            data.forEach(category => {
+                var option = document.createElement('option');
+                option.value = category._id;
+                option.text = category.name;
+                categorySelect.appendChild(option);
+            });
+        } else {
+            console.error('Error fetching categories:', res.statusText);
+        }
+        
+    } catch (error) {
+        console.error('Error fetching categories:', error);
+        
+    }
+}
+loadCategoriesForProduct();

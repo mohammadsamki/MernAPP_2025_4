@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+</head>
+<body>
+    <h1>hi in category</h1>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="login.html">Logout</a>
+    <a href="product.html">Products</a>
+    <form id="createCategoryForm">
+        <input type="text" id="name" placeholder="Category Name" required>
+        <!-- dis -->
+        <input type="text" id="description" placeholder="Description" required>
+        <input type="text" id="imageUrl" placeholder="Image URL" required>
+        <button type="submit">Create Category</button>
+    </form>
+    <table border="1" id="categoriesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="categoriesBody">
+            <!-- Categories will be populated here -->
+        </tbody>
+    </table>
+
+    <script src="./js/category.js"></script>
+    
+</body>
+</html>

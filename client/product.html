@@ -11,10 +11,14 @@
     <!-- for for crete products that contain name,price , category , dis , imageUrl   -->
         <a href="dashboard.html">Dashboard</a>
         <a href="login.html">Logout</a>
+        <a href="category.html">Categories</a>
         <form id="createProductForm">
             <input type="text" id="name" placeholder="Name" required>
             <input type="number" id="price" placeholder="Price" required>
-            <input type="text" id="category" placeholder="Category" required>
+            <!-- <input type="text" id="category" placeholder="Category" required> -->
+             <select id="category" required>
+                <option value="">Select Category</option>
+            </select>
             <input type="text" id="description" placeholder="Description" required>
             <input type="text" id="imageUrl" placeholder="Image URL" required>
             <button type="submit">Create Product</button>
