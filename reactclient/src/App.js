@@ -23,8 +23,10 @@ useEffect(() => {
     <div className="App">
         <BrowserRouter>
           <Routes>
+            {/* map  */}
 
             <Route path='/login' element={<Login/>}/>
+            {/*                       null   */}
             <Route path='/home' element={user?.role=== 'admin' ? <AdminRoute><Dashboard/></AdminRoute> : <ProtectedRoute><Home/></ProtectedRoute> }/>
             <Route path='/register' element={<Register/>}/>
             {/* 404 */}
